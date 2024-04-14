@@ -7,7 +7,6 @@ import ChatRoom from './pages/ChatRoom'
 function App() {
   return (
     <>
-      <NavBar/>
       <Routes>
         <Route path="/" element={<StartPage/>}/>
         <Route path="/chat" element={<ChatRoom/>}/>
