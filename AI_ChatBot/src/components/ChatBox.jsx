@@ -107,7 +107,7 @@ const ChatBox = () => {
     };
 
   return (
-    <>
+    <div>
         <NavBar/>
         {messages.length === 0 && (
             <div className='flex flex-col items-center justify-center h-[400px]'>
@@ -156,7 +156,7 @@ const ChatBox = () => {
                 </div>
             </div>
         </dialog>
-    </>
+    </div>
   )
 }
 

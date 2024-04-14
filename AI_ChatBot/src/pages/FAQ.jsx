@@ -86,10 +86,10 @@ const FAQ = () => {
             </div>
             <div className="collapse-content"> 
                 <p>The courses offered by GeeksforGeeks have a wide range of prices, catering to individuals with varying budgets and learning goals. Prices for courses range from free options to paid courses that can cost up to Rs. 19999. The cost of a course is influenced by factors such as the level of expertise, duration, and content complexity.
-For example, courses like "Coding For Everyone," "Python Programming Foundation," and "iOS Development for Beginners" may fall within the free or lower-priced range, making them accessible to beginners or individuals looking to explore a new programming language or development concept without a significant financial commitment.
-On the other hand, more advanced courses such as "Master Java Programming," "Master C++ Programming," "Master JavaScript Programming," and "Mastering System Design" may be priced higher due to the in-depth content, expert mentorship, and real-world applications included in the course curriculum.
-By offering a range of pricing options, GeeksforGeeks ensures that learners can select courses that align with their budget constraints while still providing valuable learning experiences and skill development opportunities. It is recommended to review the specific course pricing on the GeeksforGeeks website to determine the cost of the course you are interested in enrolling in.
-</p>
+                For example, courses like "Coding For Everyone," "Python Programming Foundation," and "iOS Development for Beginners" may fall within the free or lower-priced range, making them accessible to beginners or individuals looking to explore a new programming language or development concept without a significant financial commitment.
+                On the other hand, more advanced courses such as "Master Java Programming," "Master C++ Programming," "Master JavaScript Programming," and "Mastering System Design" may be priced higher due to the in-depth content, expert mentorship, and real-world applications included in the course curriculum.
+                By offering a range of pricing options, GeeksforGeeks ensures that learners can select courses that align with their budget constraints while still providing valuable learning experiences and skill development opportunities. It is recommended to review the specific course pricing on the GeeksforGeeks website to determine the cost of the course you are interested in enrolling in.
+                </p>
             </div>
             </div>
             <div className="collapse collapse-plus bg-base-200">
