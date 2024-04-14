@@ -11,6 +11,7 @@ from langchain.vectorstores import FAISS
 from dotenv import load_dotenv
 load_dotenv()
 import os
+import csv
 api_key = os.environ.get('GOOGLE_API_KEY')
 genai.configure(api_key=api_key);
 
@@ -70,6 +71,34 @@ sample_user_question = "what is an Entity?"
 sample_response = user_input(sample_user_question)
 print(sample_response)
 
+def submit_feedback(username, rating, message):
+    feedback_file = os.path.join("sales_data", "feedback.csv")
+    
+    # Check if file already exists
+    if not os.path.isfile(feedback_file):
+        with open(feedback_file, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(['Username', 'Rating', 'Message'])
+    
+    with open(feedback_file, mode='a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow([username, rating, message])
+
+
+def push_new_query(new_query):
+    new_query_file = os.path.join("sales_data", "newqueries.csv")
+    
+    # Check if file already exists
+    if not os.path.isfile(new_query_file):
+        with open(new_query_file, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(['Query'])
+    
+    with open(new_query_file, mode='a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow([new_query])
+    
+    
 @app.route('/ask', methods=['POST', 'GET'])
 def ask_question():
     # return {"response": response}
@@ -82,6 +111,30 @@ def ask_question():
     response = user_input(user_question)
     return {"response": response}
     # return jsonify({'response': response}), 200
+
+@app.route('/submit_feedback', methods=['POST', 'GET'])
+def handle_feedback_submission():
+    # return {"response": sample_response}
+    data = request.get_json()
+    username = data.get('username', '')
+    rating = data.get('rating', '')
+    message = data.get('message', '')
     
+    if not all([username, rating, message]):
+        return jsonify({'error': 'Incomplete data Provided'}), 400
+    submit_feedback(username, rating, message)
+    return {"message": "Feedback Successfully submitted!"}
+
+@app.route('/new_query', methods=['POST', "GET"])
+def handle_new_query_inclusion():
+    data = request.get_json()
+    new_query = data.get('newquery', '')
+    
+    if not new_query:
+        return jsonify({'error': 'Query not Provided'}), 400
+    
+    push_new_query(new_query)
+    return {"message": "New Query Successfully pushed"}
+
 if __name__ == '__main__':
     app.run(debug=True)
