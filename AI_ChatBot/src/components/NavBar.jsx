@@ -1,6 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const NavBar = () => {
+    const navigate = useNavigate();
+    const handleFAQButtonClick = () => {
+        navigate('/faq');
+    }
+    const handleChatButtonClick = () => {
+        navigate('/chat');
+    }
+
+
   return (
     <div className="mt-1 navbar bg-white rounded-xl fixed top-0 left-0 right-0 z-50">
         <div className="navbar-start">
@@ -9,8 +19,8 @@ const NavBar = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
             </div>
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-xl bg-base-100 rounded-box w-52 ">
-                <li><a>Frequently Asked Questions (FAQs)</a></li>
-                <li><a> Chat-Bot </a></li>
+                <li><a onClick={handleFAQButtonClick}>Frequently Asked Questions (FAQs)</a></li>
+                <li><a onClick={handleChatButtonClick}> Chat-Bot </a></li>
             </ul>
             </div>
         </div>
