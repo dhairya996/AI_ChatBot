@@ -17,9 +17,9 @@ const StartPage = () => {
                     <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
                     <p className="mb-5 text-md">Use this AI-Powered chat-bot for any course related queries you may have.</p>
                     <div className='flex-col'>
-                      <button onClick={handleButtonClick} className="btn btn-primary mb-5">Chat With AI</button>
+                      <button onClick={handleButtonClick} className="btn btn-primary mb-5 h-[30px] w-[150px]">Chat With AI</button>
                       <br />
-                      <button onClick={handleAdminButtonClick} className="btn btn-primary"> Admin </button>
+                      <button onClick={handleAdminButtonClick} className="btn btn-primary h-[30px] w-[150px]"> Admin </button>
                     </div>
                 </div>
             </div>
