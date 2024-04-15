@@ -67,9 +67,9 @@ def user_input(user_question):
 text_chunks = get_text_chunks(text)
 get_vector_store(text_chunks)
 
-sample_user_question = "what is an Entity?"
-sample_response = user_input(sample_user_question)
-print(sample_response)
+# sample_user_question = "what is an Entity?"
+# sample_response = user_input(sample_user_question)
+# print(sample_response)
 
 def submit_feedback(username, rating, message):
     feedback_file = os.path.join("sales_data", "feedback.csv")
@@ -84,19 +84,19 @@ def submit_feedback(username, rating, message):
         writer = csv.writer(file)
         writer.writerow([username, rating, message])
 
-
 def push_new_query(new_query):
     new_query_file = os.path.join("sales_data", "newqueries.csv")
     
-    # Check if file already exists
     if not os.path.isfile(new_query_file):
         with open(new_query_file, mode='w', newline='') as file:
             writer = csv.writer(file)
             writer.writerow(['Query'])
+            
+    words = new_query.split()
     
     with open(new_query_file, mode='a', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow([new_query])
+        writer.writerow(words)
     
     
 @app.route('/ask', methods=['POST', 'GET'])
