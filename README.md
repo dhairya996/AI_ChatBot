@@ -10,6 +10,8 @@ This is an LLM (Large Language Model based) AI Chat Bot, which is designed to an
 
 ![App Screenshot](https://drive.google.com/uc?export=view&id=1RNdW9l_FOwCNde0_enEs-aoKHf0WulNZ)
 
+![App Screenshot](https://drive.google.com/uc?export=view&id=16jGtRtTGUSyC30Pfxip4EB0HOkAwnCwZ)        ![App Screenshot](https://drive.google.com/uc?export=view&id=176fkPeovAP_oJgp6ekbdZporencgfns5)
+
 
 ## Run Locally
 
@@ -110,7 +112,7 @@ The Libraries and functions used in the Flask server, along with their respectiv
 ### Frontend Implementation
 
 The Frontend for the chatbot application has been created using React.js javascript framework using the Vite local development server.
-
+For a better user experience, the frontend has been developed in a dynamic way, so that the user can interact with the chatbot using both a computer or a mobile device without any degradation in user experience.
 The components provided to the user in the application frontend are:
 * Start Page: The landing page of the application, prompts the user to select their role.
 * Chat Room: The page which renders the chatbox component for the user to send their queries and view the response
