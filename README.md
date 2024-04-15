@@ -3,7 +3,12 @@
 
 This is an LLM (Large Language Model based) AI Chat Bot, which is designed to answer user queries regarding the courses available on any ed-tech website (currently configured according to the courses available on Geeks for Geeks).
 
+## ScreenShots
 
+![App Screenshot](https://drive.google.com/uc?export=view&id=10fRm2u3E_IFWPee3rOMsjH5fEO1zSsZc)
+
+
+![App Screenshot](https://drive.google.com/uc?export=view&id=1RNdW9l_FOwCNde0_enEs-aoKHf0WulNZ)
 
 
 ## Run Locally
@@ -70,6 +75,7 @@ After the successful completion of all these steps, the Chat Bot application is 
 ### Proposed Solution
 * For the chatbot to answer any query based upon certain relevant context or data that it must have access to, the first step is to collect all the relevant course information to the chatbot in a format, which can be parsed for the contained data to be extracted.
 * The data being provided to the server in the current implementation is in .pdf file format. However, any other relevant format like .csv, .txt, or .xlsx can also be used for this.
+* In the current implementation, the data which has been provided to the server contains a detailed description of all the categories of courses available on Geeks for Geeks, their description, price, associated topics, levels (i.e. Beginner, Intermediate or Advanced), the overview of the course and a detailed list of the Frequently asked Questions (FAQs) corresponding to all of the courses. 
 * After this, all the text information contained in the provided data is extracted, and split into smaller managable chunks for processing.
 * The obtained text chunks can be converted to embeddings, which are mathematical representations for each individual chunk or section of the text.
 * The generated embeddings can be stored in a local vector store for use.
